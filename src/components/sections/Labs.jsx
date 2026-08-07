@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const labs = [
   {
     name: "VLAN & Trunking",
@@ -127,9 +128,16 @@ function Labs() {
 
               {/* Action */}
 
-              <button className="mt-7 text-sm text-blue-400 hover:text-blue-300 font-semibold">
-                View Lab →
-              </button>
+              <Link
+  to={
+    lab.name === "VLAN & Trunking"
+      ? "/labs/vlan-routing"
+      : "#"
+  }
+  className="mt-7 inline-block text-sm text-blue-400 hover:text-blue-300 font-semibold"
+>
+  View Lab →
+</Link>
             </div>
           ))}
         </div>
