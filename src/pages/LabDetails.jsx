@@ -1,3 +1,4 @@
+import vlanTopology from "../assets/vlan-routing.png";
 function LabDetails() {
   return (
     <main className="min-h-screen bg-slate-950 text-white pt-28 pb-20 px-6">
@@ -101,7 +102,30 @@ function LabDetails() {
 
           </div>
         </section>
+        {/* Network Topology */}
 
+<section className="mt-16">
+  <p className="text-blue-400 text-sm uppercase tracking-widest">
+    03 / Network Topology
+  </p>
+
+  <h2 className="text-3xl font-bold mt-3">
+    Cisco Packet Tracer Topology
+  </h2>
+
+  <p className="text-slate-400 max-w-3xl mt-5">
+    The topology separates the network into three departmental VLANs
+    and uses a trunk connection between the switch and router.
+  </p>
+
+  <div className="mt-8 bg-slate-900 border border-slate-800 rounded-xl p-4">
+    <img
+      src={vlanTopology}
+      alt="Cisco Packet Tracer VLAN and Inter-VLAN routing topology"
+      className="w-full rounded-lg"
+    />
+  </div>
+</section>
         {/* Technologies */}
 
         <section className="mt-16">
@@ -230,6 +254,41 @@ Router(config-subif)# ip address 192.168.30.1 255.255.255.0`}
 
           </div>
         </section>
+        {/* Lab Files */}
+
+<section className="mt-16">
+  <p className="text-blue-400 text-sm uppercase tracking-widest">
+    07 / Lab Files
+  </p>
+
+  <h2 className="text-3xl font-bold mt-3">
+    Packet Tracer Project
+  </h2>
+
+  <p className="text-slate-400 max-w-3xl mt-5">
+    Download the Packet Tracer project used to build and test this
+    network topology.
+  </p>
+
+  <div className="flex flex-wrap gap-4 mt-6">
+    <a
+      href="/packet-tracer/labs/Office_vlan.pkt"
+      download
+      className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition"
+    >
+      Download Packet Tracer Lab
+    </a>
+
+    <a
+      href="https://github.com/konkeokuhle/Networking_portfolio"
+      target="_blank"
+      rel="noreferrer"
+      className="border border-slate-700 hover:border-blue-500 px-6 py-3 rounded-lg font-semibold transition"
+    >
+      View GitHub
+    </a>
+  </div>
+</section>
 
       </div>
     </main>
