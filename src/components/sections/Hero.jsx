@@ -1,5 +1,5 @@
 import StatusCard from "../dashboard/StatusCard";
-
+import CiscoTerminal from "../dashboard/CiscoTerminal";
 function Hero() {
   return (
     <section
@@ -61,6 +61,7 @@ function Hero() {
         </div>
 
       </div>
+      <CiscoTerminal />
     </section>
   );
 }
