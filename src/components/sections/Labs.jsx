@@ -4,46 +4,57 @@ const labs = [
     name: "VLAN & Trunking",
     category: "Switching",
     status: "Completed",
+    route: "/labs/vlan-routing",
     description:
       "Configured VLAN 10 HR, VLAN 20 IT, and VLAN 30 SALES with 802.1Q trunking.",
     technologies: ["VLANs", "802.1Q", "Trunking"],
   },
+
   {
     name: "Inter-VLAN Routing",
     category: "Routing",
     status: "Completed",
+    route: "/labs/vlan-routing",
     description:
       "Configured router-on-a-stick using router subinterfaces for communication between VLANs.",
     technologies: ["Cisco IOS", "Subinterfaces", "Routing"],
   },
+
   {
     name: "Extended ACL Security",
     category: "Security",
     status: "Completed",
+    route: "/labs/acl-security",
     description:
       "Implemented an extended ACL to control traffic between departmental networks.",
     technologies: ["ACL", "IPv4", "Traffic Filtering"],
   },
+
   {
     name: "DHCP Network",
     category: "Services",
     status: "Completed",
+    route: "/labs/dhcp-network",
     description:
       "Configured DHCP addressing so network hosts can automatically obtain IP configuration.",
     technologies: ["DHCP", "IPv4", "Default Gateway"],
   },
+
   {
     name: "IPv4 Subnetting",
     category: "Addressing",
     status: "Completed",
+    route:  "/labs/ipv4-subnetting",
     description:
       "Designed subnets using CIDR, subnet masks, block sizes, network addresses, and broadcast addresses.",
     technologies: ["IPv4", "CIDR", "Subnetting"],
   },
+
   {
     name: "IPv6 Addressing",
     category: "Addressing",
     status: "In Progress",
+    route: "/labs/ipv6-addressing",
     description:
       "Practicing IPv6 addressing, /64 prefixes, interface addresses, and IPv6 configuration.",
     technologies: ["IPv6", "/64", "Cisco IOS"],
@@ -127,13 +138,8 @@ function Labs() {
               </div>
 
               {/* Action */}
-
-              <Link
-  to={
-    lab.name === "VLAN & Trunking"
-      ? "/labs/vlan-routing"
-      : "#"
-  }
+<Link
+  to={lab.route}
   className="mt-7 inline-block text-sm text-blue-400 hover:text-blue-300 font-semibold"
 >
   View Lab →
