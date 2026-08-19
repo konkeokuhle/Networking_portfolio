@@ -9,12 +9,14 @@ import LabDetails from "./pages/LabDetails";
 import ACLDetails from "./pages/ACLDetails";
 import IPv4SubnettingDetails from "./pages/IPv4SubnettingDetails";
 import Certifications from "./components/sections/Certifications";
+import MachineLearning from "./components/sections/MachineLearning";
 function Home() {
   return (
     <>
       <Navbar />
       <Hero />
       <Skills />
+      <MachineLearning />
       <Labs />
       <Certifications />
     </>

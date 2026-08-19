@@ -1,9 +1,13 @@
+import networkingBasics from "../../assets/certifications/networking-basics.png";
+import networkAddressing from "../../assets/certifications/network-addressing-trouleshooting.png";
+
 const certifications = [
   {
     name: "Networking Basics",
     provider: "Cisco Networking Academy",
     category: "Networking",
     status: "Completed",
+    image: networkingBasics,
     description:
       "Introduced fundamental networking concepts, network devices, communication protocols, and basic troubleshooting.",
     skills: [
@@ -18,6 +22,7 @@ const certifications = [
     provider: "Cisco Networking Academy",
     category: "Networking",
     status: "Completed",
+    image: networkAddressing,
     description:
       "Developed practical knowledge of IP addressing, subnetting, connectivity testing, and basic network troubleshooting.",
     skills: [
@@ -36,7 +41,7 @@ function Certifications() {
     >
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Header */}
+        {/* Header */}
 
         <div className="mb-12">
           <p className="text-blue-400 text-sm font-semibold tracking-[4px] uppercase">
@@ -53,7 +58,7 @@ function Certifications() {
           </p>
         </div>
 
-        {/* Credential Stats */}
+        {/* Stats */}
 
         <div className="grid md:grid-cols-3 gap-5 mb-10">
 
@@ -96,64 +101,69 @@ function Certifications() {
           {certifications.map((certification) => (
             <div
               key={certification.name}
-              className="bg-slate-900 border border-slate-800 rounded-xl p-7 hover:border-blue-500 transition"
+              className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-blue-500 transition"
             >
 
-              {/* Provider + Status */}
+              {/* Certificate Image */}
 
-              <div className="flex items-center justify-between gap-4">
-
-                <span className="text-xs uppercase tracking-wider text-blue-400">
-                  {certification.provider}
-                </span>
-
-                <span className="text-xs font-semibold text-green-400">
-                  ● {certification.status}
-                </span>
-
+              <div className="bg-slate-950 p-4">
+                <img
+                  src={certification.image}
+                  alt={`${certification.name} certificate`}
+                  className="w-full h-64 object-contain rounded-lg"
+                />
               </div>
 
-              {/* Certification Name */}
+              {/* Card Content */}
 
-              <h3 className="text-2xl font-bold mt-6">
-                {certification.name}
-              </h3>
+              <div className="p-7">
 
-              {/* Category */}
+                {/* Provider + Status */}
 
-              <p className="text-slate-500 text-sm mt-2">
-                {certification.category}
-              </p>
+                <div className="flex items-center justify-between gap-4">
 
-              {/* Description */}
-
-              <p className="text-slate-400 mt-5 leading-7">
-                {certification.description}
-              </p>
-
-              {/* Skills */}
-
-              <div className="flex flex-wrap gap-2 mt-6">
-
-                {certification.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 text-xs rounded-full bg-slate-800 text-slate-300"
-                  >
-                    {skill}
+                  <span className="text-xs uppercase tracking-wider text-blue-400">
+                    {certification.provider}
                   </span>
-                ))}
+
+                  <span className="text-xs font-semibold text-green-400">
+                    ● {certification.status}
+                  </span>
+
+                </div>
+
+                {/* Name */}
+
+                <h3 className="text-2xl font-bold mt-6">
+                  {certification.name}
+                </h3>
+
+                <p className="text-slate-500 text-sm mt-2">
+                  {certification.category}
+                </p>
+
+                {/* Description */}
+
+                <p className="text-slate-400 mt-5 leading-7">
+                  {certification.description}
+                </p>
+
+                {/* Skills */}
+
+                <div className="flex flex-wrap gap-2 mt-6">
+
+                  {certification.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1 text-xs rounded-full bg-slate-800 text-slate-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+
+                </div>
 
               </div>
-
-              {/* Credential Button */}
-
-              <button
-                type="button"
-                className="mt-7 text-sm text-blue-400 font-semibold hover:text-blue-300 transition"
-              >
-                Credential Details →
-              </button>
 
             </div>
           ))}
